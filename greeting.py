@@ -7,8 +7,8 @@ with open('female_endings.pkl', 'rb') as f:
 
     
 def greeting(name: str) -> str:
-    if name[-4:] in male_endings:
+    if name[-4:].lower() in male_endings:
         return f'Уважаемый {name}'
-    if name[-4:] in female_endings:
+    if name[-4:].lower() in female_endings:
         return f'Уважаемая {name}'
     raise ValueError('Can\'t resolve gender')
